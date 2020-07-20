@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .carouselHeight {
+      }
+    </style>
+    <title>Kryoka Kostyantyn</title>
+  </head>
+  <body>
+    <script>
+      let other = 150,
+        hh = document.documentElement.clientHeight,
+        ww = document.documentElement.clientWidth;
+      let ourHeight = hh - 150;
+      document.styleSheets[3].rules[0].style.height = ourHeight + "px";
+
+      if (ww < 768) {
+        document.styleSheets[3].rules[0].style.height = "auto";
+        document.styleSheets[3].rules[0].style.width = "100%";
+      }
+    </script>
+    <div class="container-fluid d-flex" style="height: 75px;">
+      <div class="col-xl-2 col-1"></div>
+      <div class="container align-self-center col">
+        <p class="logo-site">portfolio photography</p>
+      </div>
+    </div>
+    <!-- <div class="container-fluid">
+      <div class="embla" id="embla">
+        <div class="embla__container" style="height: 800px;">
+          <div class="embla__slide">
+            <img src="images/kryoka-1.jpg" alt="" />
+          </div>
+          <div class="embla__slide">
+            <img src="images/kryoka-2.jpg" alt="" />
+          </div>
+          <div class="embla__slide">
+            <img src="images/kryoka-3.jpg" alt="" />
+          </div>
+          <div class="embla__slide">
+            <img src="images/kryoka-4-v2.jpg" alt="" />
+          </div>
+          <div class="embla__slide">
+            <img src="images/kryoka-5-v2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div
+      class="container-fluid d-flex justify-content-center"
+      style="overflow: hidden;"
+    >
+      <div
+        id="carouselExampleControls"
+        class="carousel col-11"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner" id="pasteHere"></div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+          ><svg
+            width="2em"
+            height="2em"
+            viewBox="0 0 16 16"
+            class="bi bi-chevron-left"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <svg
+            width="2em"
+            height="2em"
+            viewBox="0 0 16 16"
+            class="bi bi-chevron-right"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container-fluid d-flex" style="height: 75px;">
+      <div class="col-xl-2 col-1"></div>
+      <div
+        class="container align-self-center col-8 d-flex justify-content-between bottom-site"
+      >
+        <span>Kryoka Kostyantyn</span>
+        <p>
+          <a href="#">Contacts</a> &nbsp
+          <a href="http://instagram.com/k.kryoka" id="inst">Instagram</a>
+          &nbsp
+          <a href="http://behance.net/kryoka" id="behance">Behance</a>
+        </p>
+      </div>
+      <div class="col-xl-2 col-1"></div>
+    </div>
+
+    <!-- <div
+      class="container-fluid d-flex justify-content-center fixed-bottom col-10"
+      style="height: 75px;"
+    >
+      <div class="col-md-6 col-sm-12">
+        <p class="bottom-site">
+          Kryoka Kostyantyn
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <p class="bottom-site">
+          <a href="http://instagram.com/k.kryoka">Instagram</a><br />
+          <a href="#">Contacts</a> <br />
+          <a href="http://behance.net/kryoka">Behance</a> <br />
+        </p>
+      </div>
+    </div> -->
+
+    <!-- <div
+      class="container-fluid d-flex justify-content-center fixed-bottom"
+      style="height: 100px;"
+    >
+      <p class="bottom-site align-self-center">Kryoka</p>
+    </div> -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/bootstrap.js"></script>
+    <script>
+      let inst = document.querySelector("#inst"),
+        behance = document.querySelector("#behance"),
+        showContacts = document.querySelector("#show-contacts"),
+        hideContacts = document.querySelector("#hide-contacts");
+
+      if (ww < 620) {
+        inst.style.display = "none";
+        behance.style.display = "none";
+      }
+
+      let photos = [
+        ["kryoka-1.jpg", "kryoka-4.jpg"],
+        "kryoka-2.jpg",
+        "kryoka-3.jpg",
+        "kryoka-5-v2.jpg",
+        "kryoka-6-v2.jpg",
+        ["kryoka-7-v2.jpg", "kryoka-9.jpg"],
+        "kryoka-10-v2.jpg",
+        "kryoka-12-v2.jpg",
+        "kryoka-13-v3.jpg",
+      ];
+
+      let paste = document.querySelector("#pasteHere"),
+        html = "";
+      // ,
+      // photos = JSON.parse(photo);
+
+      photos.map((item, index) => {
+        if (ww < 930) {
+          if (Array.isArray(item)) {
+            html += `<div class="carousel-item `;
+
+            if (index == 0) {
+              html += "active";
+            }
+
+            html += ` carouselHeight">
+            <img src="images/${item[0]}" class="d-block" alt="..." />
+            </div>
+        <div class="carousel-item carouselHeight">
+            <img src="images/${item[1]}" class="d-block" alt="..." />
+          </div>`;
+          } else {
+            html += `<div class="carousel-item `;
+
+            if (index == 0) {
+              html += "active";
+            }
+
+            html += ` carouselHeight">
+            <img src="images/${item}" class="d-block" alt="..." />
+          </div>`;
+          }
+        } else {
+          if (Array.isArray(item)) {
+            html += `<div class="carousel-item `;
+
+            if (index == 0) {
+              html += "active";
+            }
+
+            html += ` carouselHeight">
+            <img src="images/${item[0]}" class="d-block" alt="..." />
+            <img src="images/${item[1]}" class="d-block" alt="..." />
+          </div>`;
+          } else {
+            html += `<div class="carousel-item `;
+
+            if (index == 0) {
+              html += "active";
+            }
+
+            html += ` carouselHeight">
+            <img src="images/${item}" class="d-block" alt="..." />
+          </div>`;
+          }
+        }
+      });
+      paste.innerHTML = html;
+    </script>
+  </body>
+</html>
