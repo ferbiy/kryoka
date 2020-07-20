@@ -1,0 +1,55 @@
+html {
+  font-family: "Josefin Sans", sans-serif;
+}
+div {
+  background-color: black !important;
+}
+
+.logo-site {
+  font-size: 2rem;
+  /* font-style: italic; */
+  font-weight: 100;
+  /* letter-spacing: 1rem; */
+  color: white;
+}
+.bottom-site {
+  font-size: 1.3rem;
+  /* font-style: italic; */
+  font-weight: 100;
+  /* letter-spacing: 1rem; */
+  color: white;
+}
+.bottom-site a {
+  color: #d7d7d7;
+}
+.carousel-item {
+  /* height: 800px; */
+  /* width: 100%; */
+}
+
+.carousel-item img {
+  max-height: 100%;
+  width: auto;
+}
+
+.carousel-control-prev {
+  width: 50%;
+  justify-content: left;
+}
+.carousel-control-prev svg {
+  position: absolute;
+  left: -5%;
+}
+
+.carousel-control-next {
+  width: 50%;
+  justify-content: right;
+}
+.carousel-control-next svg {
+  position: absolute;
+  right: -5%;
+}
+
+.carousel-item.active {
+  display: flex !important;
+}
