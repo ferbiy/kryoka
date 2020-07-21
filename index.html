@@ -19,6 +19,32 @@
     <style>
       .carouselHeight {
       }
+
+      div {
+        background-color: black;
+        transition: 1s;
+      }
+
+      .logo-site {
+        font-size: 2rem;
+        /* font-style: italic; */
+        font-weight: 100;
+        /* letter-spacing: 1rem; */
+        color: white;
+        transition: 400ms;
+      }
+      .bottom-site {
+        font-size: 1.3rem;
+        /* font-style: italic; */
+        font-weight: 100;
+        /* letter-spacing: 1rem; */
+        color: white;
+        transition: 600ms;
+      }
+      .bottom-site a {
+        color: white;
+        transition: 800ms;
+      }
     </style>
     <title>Kryoka Kostyantyn</title>
   </head>
@@ -78,6 +104,7 @@
           href="#carouselExampleControls"
           role="button"
           data-slide="prev"
+          onclick="upgrade()"
           ><svg
             width="2em"
             height="2em"
@@ -98,6 +125,7 @@
           href="#carouselExampleControls"
           role="button"
           data-slide="next"
+          onclick="upgrade()"
         >
           <svg
             width="2em"
@@ -183,74 +211,149 @@
       }
 
       let photos = [
-        ["kryoka-1.jpg", "kryoka-4.jpg"],
-        "kryoka-2.jpg",
-        "kryoka-3.jpg",
-        "kryoka-5-v2.jpg",
-        "kryoka-6-v2.jpg",
-        ["kryoka-7-v2.jpg", "kryoka-9.jpg"],
-        "kryoka-10-v2.jpg",
-        "kryoka-12-v2.jpg",
-        "kryoka-13-v3.jpg",
+        { files: ["01"], colors: ["#8C914F", "white"] },
+        { files: ["02"] },
+        { files: ["03", "04"] },
+        { files: ["05"] },
+        { files: ["06"] },
+        { files: ["07", "08"] },
+        { files: ["13"], colors: ["#607C8C", "white"] },
+        { files: ["15"], colors: ["white", "black"] },
+        { files: ["16"] },
+        { files: ["17", "18"] },
+        { files: ["19"] },
+        { files: ["20"], colors: ["", ""] },
+        { files: ["21"] },
+        { files: ["23"] },
+        { files: ["24"], colors: ["#779182", "white"] },
+        { files: ["25", "26"] },
+        { files: ["27"] },
+        { files: ["28"], colors: ["white", "black"] },
+        { files: ["29"] },
+        { files: ["30"] },
       ];
+
+      function upgrade() {
+        setTimeout(() => {
+          let kaka = document.querySelector(".active");
+
+          function changeColors(back, text) {
+            console.log(document.styleSheets[3].rules[1].style.backgroundColor);
+
+            document.styleSheets[3].rules[1].style.backgroundColor = "";
+            document.styleSheets[3].rules[1].style.backgroundColor = back;
+            document.styleSheets[3].rules[2].style.color = "";
+            document.styleSheets[3].rules[2].style.color = text;
+            document.styleSheets[3].rules[3].style.color = "";
+            document.styleSheets[3].rules[3].style.color = text;
+            document.styleSheets[3].rules[4].style.color = "";
+            document.styleSheets[3].rules[4].style.color = text;
+          }
+
+          setTimeout(() => {
+            if (kaka.attributes["data-color-back"] != undefined) {
+              changeColors(
+                kaka.attributes["data-color-back"].value,
+                kaka.attributes["data-color-text"].value
+              );
+            } else {
+              changeColors("black", "white");
+            }
+          }, 300);
+        }, 200);
+      }
+
+      function Photo(item, index) {
+        this.files = item.files;
+        this.localIndex = 0;
+
+        this.isItArray = function () {
+          if (Array.isArray(this.files)) {
+            return 2;
+          }
+          return 1;
+        };
+
+        this.active = function () {
+          if (index == 0 && this.localIndex == 0) {
+            html += " active";
+          }
+        };
+
+        this.atrClass = function () {
+          html += `class="carousel-item carouselHeight`;
+        };
+
+        this.closeCode = function () {
+          html += `">`;
+        };
+
+        this.imgCode = function (x) {
+          html += `<img src="images/${this.files[x]}.jpg" class="d-block" alt="..." />`;
+        };
+
+        this.closeDiv = function () {
+          html += `</div>`;
+        };
+
+        this.addAttribute = function () {
+          if (item.colors != undefined) {
+            html += ` data-color-back="${item.colors[0]}" data-color-text="${item.colors[1]}" `;
+          }
+        };
+
+        this.final = function () {
+          html += `<div `;
+          this.addAttribute();
+          this.atrClass();
+          this.active();
+          this.closeCode();
+          if (this.files.length > 1) {
+            for (
+              this.localIndex;
+              this.localIndex < this.files.length;
+              this.localIndex++
+            ) {
+              this.imgCode(this.localIndex);
+              if (ww < 930) {
+                this.closeDiv();
+                if (this.localIndex != this.files.length - 1) {
+                  html += `<div `;
+                  this.addAttribute();
+                  this.atrClass();
+                  this.closeCode();
+                }
+              }
+              if (this.localIndex == this.files.length - 1 && ww > 929) {
+                this.closeDiv();
+              }
+            }
+            this.localIndex++;
+          } else {
+            this.imgCode(this.localIndex);
+            this.closeDiv();
+          }
+        };
+      }
 
       let paste = document.querySelector("#pasteHere"),
         html = "";
-      // ,
-      // photos = JSON.parse(photo);
 
-      photos.map((item, index) => {
-        if (ww < 930) {
-          if (Array.isArray(item)) {
-            html += `<div class="carousel-item `;
+      for (let i = 0; i < photos.length; i++) {
+        let ok = new Photo(photos[i], i);
+        ok.final();
+      }
 
-            if (index == 0) {
-              html += "active";
-            }
-
-            html += ` carouselHeight">
-            <img src="images/${item[0]}" class="d-block" alt="..." />
-            </div>
-        <div class="carousel-item carouselHeight">
-            <img src="images/${item[1]}" class="d-block" alt="..." />
-          </div>`;
-          } else {
-            html += `<div class="carousel-item `;
-
-            if (index == 0) {
-              html += "active";
-            }
-
-            html += ` carouselHeight">
-            <img src="images/${item}" class="d-block" alt="..." />
-          </div>`;
-          }
-        } else {
-          if (Array.isArray(item)) {
-            html += `<div class="carousel-item `;
-
-            if (index == 0) {
-              html += "active";
-            }
-
-            html += ` carouselHeight">
-            <img src="images/${item[0]}" class="d-block" alt="..." />
-            <img src="images/${item[1]}" class="d-block" alt="..." />
-          </div>`;
-          } else {
-            html += `<div class="carousel-item `;
-
-            if (index == 0) {
-              html += "active";
-            }
-
-            html += ` carouselHeight">
-            <img src="images/${item}" class="d-block" alt="..." />
-          </div>`;
-          }
+      function addAttribute(colors) {
+        if (colors != undefined) {
+          console.log(colors);
+          html += `data-color-back="${colors[0]}" data-color-text="${colors[1]}"`;
         }
-      });
+      }
       paste.innerHTML = html;
+      setInterval(() => {
+        upgrade();
+      }, 100);
     </script>
   </body>
 </html>
