@@ -1,27 +1,7 @@
 html {
   font-family: "Josefin Sans", sans-serif;
 }
-div {
-  background-color: black !important;
-}
 
-.logo-site {
-  font-size: 2rem;
-  /* font-style: italic; */
-  font-weight: 100;
-  /* letter-spacing: 1rem; */
-  color: white;
-}
-.bottom-site {
-  font-size: 1.3rem;
-  /* font-style: italic; */
-  font-weight: 100;
-  /* letter-spacing: 1rem; */
-  color: white;
-}
-.bottom-site a {
-  color: #d7d7d7;
-}
 .carousel-item {
   /* height: 800px; */
   /* width: 100%; */
