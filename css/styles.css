@@ -23,6 +23,6 @@ html {
     /* margin-right: 0 !important; */
   }
   .black-back {
-    background-color: black;
+    background-color: black !important;
   }
 }
