@@ -40,7 +40,7 @@
         /* letter-spacing: 1rem; */
         color: white;
         transition: 600ms;
-        line-height: 2.6rem;
+        line-height: 2rem;
       }
       .bottom-site a {
         color: white;
@@ -58,9 +58,9 @@
         hh = document.documentElement.clientHeight,
         ww = document.documentElement.clientWidth;
       let ourHeight = hh - 150;
-      if (ww > 1000) {
-        document.styleSheets[3].rules[0].style.height = ourHeight + "px";
-      }
+      // if (ww > 1000) {
+      document.styleSheets[3].rules[0].style.height = ourHeight + "px";
+      // }
 
       // if (ww < 768) {
       //   document.styleSheets[3].rules[0].style.height = "auto";
@@ -95,63 +95,63 @@
       </div>
     </div> -->
 
-    <div
-      class="container-fluid d-flex justify-content-center"
+    <!-- <div
+      class="container-fluid d-flex justify-content-center "
       style="overflow: hidden;"
+    > -->
+    <div
+      id="carouselExampleControls"
+      class="carousel col-12"
+      data-ride="carousel"
     >
-      <div
-        id="carouselExampleControls"
-        class="carousel col-12"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner" id="pasteHere"></div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-          onclick="upgrade()"
-          ><svg
-            width="2em"
-            height="2em"
-            viewBox="0 0 16 16"
-            class="bi bi-chevron-left"
-            fill="white"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-            />
-          </svg>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
-          onclick="upgrade()"
+      <div class="carousel-inner" id="pasteHere"></div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+        onclick="upgrade()"
+        ><svg
+          width="2em"
+          height="2em"
+          viewBox="0 0 16 16"
+          class="bi bi-chevron-left"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            width="2em"
-            height="2em"
-            viewBox="0 0 16 16"
-            class="bi bi-chevron-right"
-            fill="white"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-            />
-          </svg>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+          <path
+            fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+          />
+        </svg>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+        onclick="upgrade()"
+      >
+        <svg
+          width="2em"
+          height="2em"
+          viewBox="0 0 16 16"
+          class="bi bi-chevron-right"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+    <!-- </div> -->
 
-    <div class="container-fluid d-flex">
+    <div class="container-fluid d-flex fixed-bottom">
       <div class="col-xl-2 col-1"></div>
       <div
         class="container align-self-center col-8 d-flex justify-content-between bottom-site"
@@ -297,7 +297,7 @@
         };
 
         this.imgCode = function(x) {
-          html += `<img src="images/${this.files[x]}.jpg" class="d-block" alt="..." />`;
+          html += `<img src="images/${this.files[x]}.jpg" class="d-block " alt="..." />`;
         };
 
         this.closeDiv = function() {
