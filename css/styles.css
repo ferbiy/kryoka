@@ -16,19 +16,19 @@ html {
   width: 50%;
   justify-content: left;
 }
-.carousel-control-prev svg {
+/* .carousel-control-prev svg {
   position: absolute;
   left: -5%;
-}
+} */
 
 .carousel-control-next {
   width: 50%;
   justify-content: right;
 }
-.carousel-control-next svg {
+/* .carousel-control-next svg {
   position: absolute;
   right: -5%;
-}
+} */
 
 .carousel-item.active {
   display: flex !important;
