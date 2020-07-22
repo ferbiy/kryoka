@@ -8,25 +8,3 @@ html {
   height: auto;
   margin: auto;
 }
-
-/* .carousel-control-prev {
-  width: 50%;
-  justify-content: left;
-} */
-/* .carousel-control-prev svg {
-  position: absolute;
-  left: -5%;
-} */
-
-/* .carousel-control-next {
-  width: 50%;
-  justify-content: right;
-} */
-/* .carousel-control-next svg {
-  position: absolute;
-  right: -5%;
-} */
-
-/* .carousel-item.active {
-  display: flex !important;
-} */
