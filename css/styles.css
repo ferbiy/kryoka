@@ -8,3 +8,14 @@ html {
   height: auto;
   margin: auto;
 }
+
+.animated-bg {
+  position: absolute;
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  .hide-arrow {
+    display: none;
+  }
+}
