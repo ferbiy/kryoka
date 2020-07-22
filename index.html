@@ -45,6 +45,9 @@
         color: white;
         transition: 800ms;
       }
+      html {
+        background-color: black;
+      }
     </style>
     <title>Kryoka Kostyantyn</title>
   </head>
@@ -56,12 +59,12 @@
       let ourHeight = hh - 150;
       document.styleSheets[3].rules[0].style.height = ourHeight + "px";
 
-      if (ww < 768) {
-        document.styleSheets[3].rules[0].style.height = "auto";
-        document.styleSheets[3].rules[0].style.width = "100%";
-      }
+      // if (ww < 768) {
+      //   document.styleSheets[3].rules[0].style.height = "auto";
+      //   document.styleSheets[3].rules[0].style.width = "100%";
+      // }
     </script>
-    <div class="container-fluid d-flex" style="height: 75px;">
+    <div class="container-fluid d-flex">
       <div class="col-xl-2 col-1"></div>
       <div class="container align-self-center col">
         <p class="logo-site">portfolio photography</p>
@@ -145,7 +148,7 @@
       </div>
     </div>
 
-    <div class="container-fluid d-flex" style="height: 75px;">
+    <div class="container-fluid d-flex">
       <div class="col-xl-2 col-1"></div>
       <div
         class="container align-self-center col-8 d-flex justify-content-between bottom-site"
@@ -248,6 +251,8 @@
             document.styleSheets[3].rules[3].style.color = text;
             document.styleSheets[3].rules[4].style.color = "";
             document.styleSheets[3].rules[4].style.color = text;
+            document.styleSheets[3].rules[5].style.backgroundColor = "";
+            document.styleSheets[3].rules[5].style.backgroundColor = back;
           }
 
           setTimeout(() => {
@@ -267,42 +272,44 @@
         this.files = item.files;
         this.localIndex = 0;
 
-        this.isItArray = function () {
+        this.isItArray = function() {
           if (Array.isArray(this.files)) {
             return 2;
           }
           return 1;
         };
 
-        this.active = function () {
+        this.active = function() {
           if (index == 0 && this.localIndex == 0) {
             html += " active";
           }
         };
 
-        this.atrClass = function () {
+        this.atrClass = function() {
           html += `class="carousel-item carouselHeight`;
         };
 
-        this.closeCode = function () {
+        this.closeCode = function() {
           html += `">`;
         };
 
-        this.imgCode = function (x) {
+        this.imgCode = function(x) {
           html += `<img src="images/${this.files[x]}.jpg" class="d-block" alt="..." />`;
         };
 
-        this.closeDiv = function () {
+        this.closeDiv = function() {
           html += `</div>`;
         };
 
-        this.addAttribute = function () {
+        this.addAttribute = function() {
           if (item.colors != undefined) {
-            html += ` data-color-back="${item.colors[0]}" data-color-text="${item.colors[1]}" `;
+            html += ` data-color-back="${item.colors[0]}" data-color-text="${
+              item.colors[1]
+            }" `;
           }
         };
 
-        this.final = function () {
+        this.final = function() {
           html += `<div `;
           this.addAttribute();
           this.atrClass();
@@ -347,7 +354,9 @@
       function addAttribute(colors) {
         if (colors != undefined) {
           console.log(colors);
-          html += `data-color-back="${colors[0]}" data-color-text="${colors[1]}"`;
+          html += `data-color-back="${colors[0]}" data-color-text="${
+            colors[1]
+          }"`;
         }
       }
       paste.innerHTML = html;
