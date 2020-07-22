@@ -58,7 +58,9 @@
         hh = document.documentElement.clientHeight,
         ww = document.documentElement.clientWidth;
       let ourHeight = hh - 150;
-      document.styleSheets[3].rules[0].style.height = ourHeight + "px";
+      if (ww > 1000) {
+        document.styleSheets[3].rules[0].style.height = ourHeight + "px";
+      }
 
       // if (ww < 768) {
       //   document.styleSheets[3].rules[0].style.height = "auto";
