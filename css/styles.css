@@ -25,4 +25,7 @@ html {
   .black-back {
     background-color: black !important;
   }
+  html {
+    background-color: black !important;
+  }
 }
