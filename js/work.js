@@ -24,8 +24,8 @@ let photos = [
   { files: ["13"], colors: ["#607C8C", "white"] },
   { files: ["15"], colors: ["white", "black"] },
   { files: ["16"] },
-  { files: ["17", "18"] },
-  { files: ["19"] },
+  { files: ["17", "18"], colors: ["white", "black"] },
+  { files: ["19"], colors: ["#790B0B", "white"] },
   { files: ["20"], colors: ["", ""] },
   { files: ["21"] },
   { files: ["23"] },
@@ -75,44 +75,42 @@ function Photo(item, index) {
   this.files = item.files;
   this.localIndex = 0;
 
-  this.isItArray = function() {
+  this.isItArray = function () {
     if (Array.isArray(this.files)) {
       return 2;
     }
     return 1;
   };
 
-  this.active = function() {
+  this.active = function () {
     if (index == 0 && this.localIndex == 0) {
       html += " active";
     }
   };
 
-  this.atrClass = function() {
+  this.atrClass = function () {
     html += `class="carousel-item carouselHeight`;
   };
 
-  this.closeCode = function() {
+  this.closeCode = function () {
     html += `">`;
   };
 
-  this.imgCode = function(x) {
+  this.imgCode = function (x) {
     html += `<img src="images/${this.files[x]}.jpg" class="d-block " alt="..." />`;
   };
 
-  this.closeDiv = function() {
+  this.closeDiv = function () {
     html += `</div>`;
   };
 
-  this.addAttribute = function() {
+  this.addAttribute = function () {
     if (item.colors != undefined) {
-      html += ` data-color-back="${item.colors[0]}" data-color-text="${
-        item.colors[1]
-      }" `;
+      html += ` data-color-back="${item.colors[0]}" data-color-text="${item.colors[1]}" `;
     }
   };
 
-  this.final = function() {
+  this.final = function () {
     html += `<div `;
     this.addAttribute();
     this.atrClass();
