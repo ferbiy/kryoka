@@ -56,6 +56,8 @@ function upgrade() {
       document.styleSheets[3].rules[6].style.fill = text;
       document.styleSheets[3].rules[7].style.fill = "";
       document.styleSheets[3].rules[7].style.fill = text;
+      document.styleSheets[3].rules[8].style.backgroundColor = "";
+      document.styleSheets[3].rules[8].style.backgroundColor = back;
     }
 
     setTimeout(() => {
