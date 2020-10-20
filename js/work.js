@@ -13,6 +13,15 @@ if (ww < 620) {
 }
 
 let photos = [
+  { files: ["44"], colors: ["#1d2321", "#6b9197"] },
+  { files: ["47"], colors: ["black", "white"] },
+  { files: ["45", "46"], colors: ["#1b2a27", "white"] },
+  { files: ["48"], colors: ["#8faab5", "#73573f"] },
+  { files: ["49"], colors: ["black", "#68879e"] }, //ok
+  { files: ["50"], colors: ["white", "black"] }, //ok
+  { files: ["51", "52"] }, //ok
+  { files: ["53"], colors: ["#686868", "#323232"] },
+  { files: ["54"], colors: ["black", "#323232"] },
   { files: ["01"], colors: ["#8C914F", "white"] },
   { files: ["02"] },
   { files: ["03", "04"] },
@@ -77,42 +86,44 @@ function Photo(item, index) {
   this.files = item.files;
   this.localIndex = 0;
 
-  this.isItArray = function () {
+  this.isItArray = function() {
     if (Array.isArray(this.files)) {
       return 2;
     }
     return 1;
   };
 
-  this.active = function () {
+  this.active = function() {
     if (index == 0 && this.localIndex == 0) {
       html += " active";
     }
   };
 
-  this.atrClass = function () {
+  this.atrClass = function() {
     html += `class="carousel-item carouselHeight`;
   };
 
-  this.closeCode = function () {
+  this.closeCode = function() {
     html += `">`;
   };
 
-  this.imgCode = function (x) {
+  this.imgCode = function(x) {
     html += `<img src="images/${this.files[x]}.jpg" class="d-block " alt="..." />`;
   };
 
-  this.closeDiv = function () {
+  this.closeDiv = function() {
     html += `</div>`;
   };
 
-  this.addAttribute = function () {
+  this.addAttribute = function() {
     if (item.colors != undefined) {
-      html += ` data-color-back="${item.colors[0]}" data-color-text="${item.colors[1]}" `;
+      html += ` data-color-back="${item.colors[0]}" data-color-text="${
+        item.colors[1]
+      }" `;
     }
   };
 
-  this.final = function () {
+  this.final = function() {
     html += `<div `;
     this.addAttribute();
     this.atrClass();
