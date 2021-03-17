@@ -1,0 +1,125 @@
+
+html {
+  background-color: darkcyan;
+}
+
+main, main img {
+  max-height: 85vh;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  font-weight: lighter;
+  min-width: 320px;
+  height: 100vh;
+}
+
+header {
+  font-size: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.header-title {
+  margin: 0.75rem auto 0.75rem auto;
+  text-align: center;
+  min-width: 80%;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  font-size: 1.3rem;
+}
+
+footer.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.footer-wrapper {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-name {
+  margin-right: 0;
+  margin-bottom: 0.75rem;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-buttons a {
+  text-decoration: none;
+  color: black;
+  margin-right: 0;
+}
+
+.footer-buttons a:hover {
+  font-weight: bold;
+}
+
+.arrow {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow svg {
+  width: 2rem;
+  color: white;
+}
+
+.arrow-right, .arrow-left{
+  top: 47%;
+}
+
+.arrow-left{
+  left: 0;
+}
+.arrow-right{
+  right: 0;
+}
+
+
+@media (min-width: 768px) {
+  .header-title {
+    margin-right: 0;
+    margin-left: auto;
+    text-align: left
+  }
+
+  .footer-wrapper {
+    width: 60%;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer-name {
+    margin-right: 1rem;
+    margin-bottom: 0rem;
+  }
+
+  .footer-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-buttons a {
+    margin-right: 0.75rem;
+  }
+}
