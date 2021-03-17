@@ -1,69 +1,43 @@
 import * as React from "react";
 import Footer from "../components/Footer";
-import Header from "../components/Header"
-import '@brainhubeu/react-carousel/lib/style.css';
-// import {ReactComponent as Back} from '../icons/back.svg';
-// import {ReactComponent as Next} from '../icons/next.svg';
+import Header from "../components/Header";
+import ReactSlidy from 'react-slidy';
+import {useState} from "react";
 
 interface ImageObject {
     src: string,
     color: Color
 }
 
-interface Color {
+export interface Color {
     interface: string,
     background: string
 }
 
-export default class Main extends React.Component {
-    constructor(props: {} | Readonly<{}>) {
-        super(props)
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange() {
-        console.log('shit');
-    }
-
-    public images: ImageObject[] = [
-        {src: './images/01.jpg', color: {interface: '', background: ''}},
-        {src: './images/02.jpg', color: {interface: '', background: ''}},
-        {src: './images/03.jpg', color: {interface: '', background: ''}},
-        {src: './images/04.jpg', color: {interface: '', background: ''}}
+export default function Main() {
+    const images: ImageObject[] = [
+        {src: './images/01.jpg', color: {interface: '#FFFFFF', background: '#000000'}},
+        {src: './images/02.jpg', color: {interface: '#BA55D3', background: '#D38E38'}},
+        {src: './images/03.jpg', color: {interface: '#0000FF', background: '#FF0000'}},
+        {src: './images/04.jpg', color: {interface: '#FFD700', background: '#808080'}}
     ];
-    public colors: Color = {
-        interface: 'white',
-        background: 'black'
-    };
 
-    render() {
-        const backgroundColor = 'white',
-            interfaceColor = 'black';
+    let [colors, setColors] = useState<Color>({...images[0].color});
 
-
-        return (
-
-            <div className="main-wrapper">
-                <Header color={interfaceColor}/>
-                <main>
-                    {/*<Carousel*/}
-                    {/*    slides={this.images.map((img) => <img src={img.src} alt="" key={img.src + ' photo'}/>)}*/}
-                    {/*    onChange={this.onChange}*/}
-                    {/*    plugins={[*/}
-                    {/*        'infinite',*/}
-                    {/*        'clickToChange',*/}
-                    {/*        {*/}
-                    {/*            resolve: arrowsPlugin,*/}
-                    {/*            options: {*/}
-                    {/*                arrowLeft: <button className='arrow'><Back fill={interfaceColor}/></button>,*/}
-                    {/*                arrowRight: <button className='arrow'><Next fill={interfaceColor}/></button>,*/}
-                    {/*                addArrowClickHandler: true,*/}
-                    {/*            },*/}
-                    {/*        },*/}
-                    {/*    ]}/>*/}
-                </main>
-                <Footer color={interfaceColor}/>
-            </div>
-        )
+    function changeColors(e: {currentSlide: number}): void {
+        setColors({...images[e.currentSlide].color});
     }
+
+    return (
+        <div className="main-wrapper" style={{backgroundColor: colors.background}}>
+            <Header colors={colors}/>
+            <main>
+                {/*todo change arrows*/}
+                <ReactSlidy imageObjectFit="contain" itemsToPreload={2} showArrows={true} doAfterSlide={changeColors}>
+                    {images.map((image, i) => <img src={image.src} key={`Photograph #${i}`}/>)}
+                </ReactSlidy>
+            </main>
+            <Footer colors={colors}/>
+        </div>
+    );
 }

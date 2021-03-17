@@ -1,14 +1,17 @@
 import * as React from "react";
+import {Color} from "../pages/Main";
+
 interface HeaderProps {
-    color: string
+    colors: Color
 }
 
 export default function Header(props: HeaderProps){
-    const color = {color: props.color}
+    const interfaceColor = {color: props.colors.interface},
+    backgroundColor = {backgroundColor: props.colors.background};
 
     return (
         <header className="header">
-            <div className="header-title" style={color}>portfolio photography</div>
+            <div className="header-title" style={interfaceColor}>portfolio photography</div>
         </header>
 
     )

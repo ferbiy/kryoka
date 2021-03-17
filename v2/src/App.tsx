@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Main from "./pages/Main1";
+import Main from "./pages/Main";
 import Contact from './pages/Contact'
 import {
   BrowserRouter as Router,
