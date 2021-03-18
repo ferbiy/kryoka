@@ -11,7 +11,7 @@ export default function Footer(props: FooterProps) {
         backgroundColor = {backgroundColor: props.colors.background};
 
     return (
-        <footer style={backgroundColor}>
+        <footer >
             <div className='footer-wrapper'>
                 <div className='footer-name' style={interfaceColor}>Kryoka Kostyantyn</div>
                 <div className='footer-buttons'>

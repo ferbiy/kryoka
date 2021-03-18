@@ -16,7 +16,7 @@ export interface Color {
 
 export default function Main() {
     const images: ImageObject[] = [
-        {src: './images/01.jpg', color: {interface: '#FFFFFF', background: '#000000'}},
+        {src: './images/01.jpg', color: {interface: '#FFFFFF', background: '#8C914F'}},
         {src: './images/02.jpg', color: {interface: '#BA55D3', background: '#D38E38'}},
         {src: './images/03.jpg', color: {interface: '#0000FF', background: '#FF0000'}},
         {src: './images/04.jpg', color: {interface: '#FFD700', background: '#808080'}}
